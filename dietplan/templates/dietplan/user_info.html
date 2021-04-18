@@ -1,0 +1,60 @@
+{% extends 'dietplan/base1.html' %}
+{% block content%}
+<br>
+<br>
+<br>
+<br>
+<h3>Fill out the information to get your diet-plan</h3>
+<div class="form-group">
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" class="btn btn-primary" class="form-control" value="Submit">
+    </form>
+</div>
+</div>
+<!--your result: {{form.name}}-->
+<!--<br>-->
+<!--your age is : {{age}}<br>-->
+<!--&lt;!&ndash;{% for list in list %}&ndash;&gt;-->
+<!--&lt;!&ndash;your age:{{list.age}}&ndash;&gt;-->
+<!--&lt;!&ndash;{% endfor %}&ndash;&gt;-->
+<!--your weight is :{{weight}}-->
+<!--<br>-->
+<!--your height is : {{height}}-->
+<!--<br>-->
+<!--your gender is : {{gender_choice}}-->
+<!--<br>-->
+<!--your bmr is : {{bmr}}-->
+<!--<br>-->
+<!--your activity choice is : {{activity_choices}}-->
+<!--<br>-->
+<!--<h3>The number of calories you should intake to maintain your weight is : {{bmr}} Calories</h3><br>-->
+<!--<h3>For mild weight loss (0.25 Kg per week), the number of calories you should intake is : {{mild_weightloss}} Calories</h3><br>-->
+<!--<h3>For weight loss (0.5 Kg per week), the number of calories you should intake is : {{weight_loss}} Calories</h3><br>-->
+<!--<br>-->
+
+<!--<h3>Your meal plan to maintain weight</h3>-->
+<!--<center>-->
+<!--<table style="width: 60%" , style="height: 40%">-->
+<!--    <tr>-->
+<!--        <th> Breakfast</th> <th>Snack</th><th>Lunch</th><th>Snack</th><th>Dinner</th>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>{{breakfast}}</td>-->
+<!--        <td>{{snack1}}</td>-->
+<!--        <td>{{lunch}}</td>-->
+<!--        <td>{{snack2}}</td>-->
+<!--        <td>{{dinner}}</td>-->
+<!--    </tr>-->
+<!--</table>-->
+<!--</center>-->
+<br>
+<br>
+<br>
+<br>
+
+<!--<h3> For extreme weight loss (1 kg per week ), the number of calories you should intake is : {{extreme_weightloss}}</h3>-->
+{% endblock %}
+

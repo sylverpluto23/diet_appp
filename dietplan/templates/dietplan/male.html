@@ -1,0 +1,21 @@
+{% extends 'dietplan/base1.html' %}
+{% block content%}
+<form action="male" method="post">
+      {% csrf_token %}
+       <h1> Enter your Weight in Kg :</h1>
+    <input  type="text" name="weight1" value="weight1"><br><br>
+      <h1>  Enter your Height in cm :</h1>
+     <input type="text" name="height1" value="height1""><br><br>
+    <h1> Your age: </h1>
+     <input type="text" name="age1" >
+    <br><br>
+
+    <input type="submit">
+</form>
+<!--<form action="/your-name/" method="post">-->
+<!--    <label for="your_name">Your name: </label>-->
+<!--    <input id="your_name" type="text" name="your_name" value="{{ current_name }}">-->
+<!--    <input type="submit" value="OK">-->
+<!--</form>-->
+calories: {{male}}
+{% endblock %}

@@ -1,0 +1,169 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+
+<!--    <link rel="stylesheet" href="base.css">-->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="icon" type="image/png"  href="{% static 'dietplan/apple (2).png' %}">
+    <title>Stay Healthy</title>
+    <style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+.login{
+padding-top:250px;
+}
+.top-box{
+width:100%;
+position:relative;
+padding-bottom:200px;
+}
+
+.centerlogo{
+padding-top:200px;
+width:10%;
+}
+body{
+margin:0px;
+text-align:center;
+}
+.bmipic{
+width:17%;
+height:10%
+position:relative;
+float:left;
+padding-top:100px;
+margin-left:80px;
+}
+.bmitopic{
+padding-bottom:200px;
+padding-top:200px;
+color:white;
+}
+
+
+.bmiform{
+padding-top:200px;
+}
+
+
+
+#bg{
+background-repeat: no-repeat;
+background-size: 100%;
+background-position:top;
+}
+
+
+    </style>
+</head>
+<body id="bg" style="background-image:url('{% static 'dietplan/fruits1.jpg'%}');">
+<!--.top-box{-->
+<!--width:100%;-->
+<!--background-color:#EEEBDD;-->
+<!--position:relative;-->
+<!--padding-bottom:200px;-->
+<!--}-->
+<!--}-->
+<!--.bmitopic{-->
+<!--padding-bottom:200px;-->
+<!--padding-top:200px;-->
+<!--color:white;-->
+<!--}-->
+<!--body-->
+<!--{-->
+<!--background-color:#EEEBDD-->
+<!--}-->
+
+<!--topbox-->
+<!--background-color:#EEEBDD;-->
+<!--.middle-container{-->
+<!--background-color:#7b113a;-->
+<!--}-->
+
+<!--background-color:#EEEBDD;-->
+<nav class="navbar navbar-expand-md navbar-light bg-warning">
+
+<div class="container">
+    <a class="navbar-brand" href="{% url 'home' %}">
+         <img src="{% static 'dietplan/apple (2).png' %}" width="30" height="30" class="d-inline-block align-top">
+        <span>Stay Healthy</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+    {% if user.is_authenticated %}
+        <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item {{ current }}">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item {{ completed }}">
+                    <a class="nav-link" href="{% url 'bmi' %}">BMI</a>
+                </li>
+                <li class="nav-item {{ create }}">
+                    <a class="nav-link" href="{% url 'bmi1' %}">BMI Result</a>
+                </li>
+
+        </ul>
+    {% endif %}
+    <ul class="navbar-nav ml-auto">
+            {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a href="#" onclick="$('#signOutBtn').click()" class="nav-link">Logout</a>
+                    <form style='display: none;' method="POST" action="{% url 'logoutuser' %}">
+                        {% csrf_token %}
+                        <button id="signOutBtn" type="submit">Logout</button>
+                    </form>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'signupuser' %}">Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'loginuser' %}">Login</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</div>
+</nav>
+
+<div>
+{% block content %}{% endblock %}
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% extends 'dietplan/base1.html' %}
+{% block content%}
+{% load static %}
+<div class="bmiform">
+<h1>BMI CHECKER:</h1>
+<div class="row justify-content-center mt-5">
+<form  action="bmi1">
+
+    <h3>Enter your Weight in Kg : </h3> <input type="text" name="weight" class="form-control">
+    <br>
+    <br>
+        <h3>Enter your height in m : </h3> <input type="text" name="height" class="form-control">
+    <br>
+    <br>
+    <input type="submit">
+</form>
+</div>
+</div>
+{% if bmi1 < 18.5%}
+Your BMI is: {{ bmi1 }}
+You are underweight
+
+{% elif bmi1 < 25 %}
+Your BMI is: {{bmi1}}
+you have a normal weight
+
+{% elif bmi1 < 30 %}
+Your BMI is: {{bmi1}}
+You are slightly overweight
+
+{% elif bmi1 < 35 %}
+Your BMI is: {{bmi1}}
+you are obese
+
+{% elif bmi1 > 35 %}
+Your BMI is: {{bmi1}}
+You are clinically obese
+{%endif %}
+{% endblock %}

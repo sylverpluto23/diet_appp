@@ -1,0 +1,48 @@
+{% extends 'dietplan/base1.html' %}
+{% block content%}
+{% load static %}
+<!--<div class="login">-->
+<!--    </div>-->
+<!--    <h1>Login page</h1>-->
+<!--<h2>{{ error }}</h2>-->
+<!--<form method="POST">-->
+<!--    {{form.as_p}}  &lt;!&ndash;puts the content in paragraphs&ndash;&gt;-->
+<!--    {% csrf_token %}-->
+<!--    <button type="submit" class="">-->
+<!--        Login-->
+<!--    </button>-->
+<!--</form>-->
+<!--  <div class="row justify-content-center mt-5">-->
+<!--        <div class="col-md-5">-->
+<!--            <h2>Login</h2>-->
+<!--        </div>-->
+<!--    </div>-->
+<div class="loginback">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-5">
+            <h2>Login</h2>
+            {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endif %}
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" class="form-control" id="username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="form-control" id="password">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <hr>
+            <div class="text-center">
+                Need an account? <a href="{% url 'signupuser' %}">Sign Up here</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

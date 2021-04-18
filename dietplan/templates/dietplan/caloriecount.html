@@ -1,0 +1,46 @@
+
+<!--    <label> Choose a Gender:</label>-->
+<!--   <select name="male">-->
+<!--  <option name="male" value="male">male</option>&ndash;&gt;-->
+<!--    <option name="male" value="female">female</option>&ndash;&gt;-->
+<!--  </select><br>-->
+<!--    <input type="radio" name="male" value="male"> Male-->
+<!--    <br>-->
+<!--       <input type="radio" name="female" value="female"> Female-->
+   <label>Choose a gender:</label>
+    <input type="radio"  value="male" multiple="gender"> male<br>
+     <input type="radio" value="female" multiple="gender"> female<br>
+
+
+<form action="caloriecount">
+    <br>
+    <br>
+    <label>
+        Enter your Weight in Kg :
+    </label>
+    <input type="number" name="weight"><br><br>
+    <label>
+        Enter your Height in cm :
+    </label>
+     <input type="number" name="height"><br><br>
+    <label>
+        Your Age :
+    </label>
+     <input type="number" name="age">
+    <br><br>
+    <label>
+        Activity Factor :
+    </label>
+    <select name="activityfactor">
+        <option name="no">Little or no exercise</option>
+         <option name="little">Exercise(1-3 days per week)</option>
+         <option name="moderate">Moderate Exercise(3-5 days per week)</option>
+         <option name="heavy">Heavy Exercise(6-7 days per week)</option>
+         <option name="veryheavy">Very Heavy Exercise(twice per day) </option>
+    </select><br><br>
+
+    <input type="submit">
+</form>
+
+
+Your Calorie Count for a day is {{caloriecount}}
