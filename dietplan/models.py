@@ -18,10 +18,10 @@ ACTIVITY_CHOICES = [('no', 'Little or no exercise'), ('little', 'Exercise 1-3 da
 class UserInfoModel(models.Model):
     name = models.CharField(max_length=20)
     gender_choice = models.CharField(max_length=6 , choices=GENDER_CHOICE,)
-    height = models.FloatField()
-    weight = models.FloatField()
+    height_in_cm = models.FloatField()
+    weight_in_kg = models.FloatField()
     age = models.FloatField()
     activity_choices = models.CharField(max_length=150, default= 'NULL' ,  choices=ACTIVITY_CHOICES,)
 
     def __str__(self):
-        return self.gender_choice
+        return self.name 

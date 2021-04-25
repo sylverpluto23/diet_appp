@@ -18,6 +18,7 @@
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  background-color:#8fd9a8;
 }
 
 #customers td, #customers th {
@@ -68,9 +69,6 @@ color:white;
 }
 
 
-.bmiform{
-padding-top:200px;
-}
 
 
 
@@ -79,11 +77,17 @@ background-repeat: no-repeat;
 background-size: 100%;
 background-position:top;
 }
-
+.bmiform{
+background-color:#8fd9a8;
+}
 
     </style>
 </head>
 <body id="bg" style="background-image:url('{% static 'dietplan/fruits1.jpg'%}');">
+
+<!--.bmiform{-->
+<!--&lt;!&ndash;padding-top:200px;&ndash;&gt;-->
+<!--}-->
 <!--.top-box{-->
 <!--width:100%;-->
 <!--background-color:#EEEBDD;-->
@@ -128,9 +132,9 @@ background-position:top;
                 <li class="nav-item {{ completed }}">
                     <a class="nav-link" href="{% url 'bmi' %}">BMI</a>
                 </li>
-                <li class="nav-item {{ create }}">
-                    <a class="nav-link" href="{% url 'bmi1' %}">BMI Result</a>
-                </li>
+<!--                <li class="nav-item {{ create }}">-->
+<!--                    <a class="nav-link" href="{% url 'bmi1' %}">BMI Result</a>-->
+<!--                </li>-->
 
         </ul>
     {% endif %}

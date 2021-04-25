@@ -3,20 +3,13 @@
 {% load static %}
 <div class="bmiform">
 <h1>BMI CHECKER:</h1>
+     <img src="{% static 'dietplan/bmi2.jpg' %}" width="500" height="500">
+     <img src="{% static 'dietplan/bmi1.jpg' %}" width="500" height="500">
 <div class="row justify-content-center mt-5">
 <form  action="bmi1">
-
-    <h3>Enter your Weight in Kg : </h3> <input type="text" name="weight" class="form-control">
-    <br>
-    <br>
-        <h3>Enter your height in m : </h3> <input type="text" name="height" class="form-control">
-    <br>
-    <br>
-    <input type="submit">
-</form>
-</div>
-</div>
-{% if bmi1 < 18.5%}
+<!--    <img src="{% static 'dietplan/bmi2.jpg' %}" width="500" height="500">-->
+<!--     <img src="{% static 'dietplan/bmi1.jpg' %}" width="500" height="500">-->
+    {% if bmi1 < 18.5%}
 Your BMI is: {{ bmi1 }}
 You are underweight
 
@@ -36,4 +29,16 @@ you are obese
 Your BMI is: {{bmi1}}
 You are clinically obese
 {%endif %}
+    <h3>Enter your Weight in Kg : </h3> <input type="text" name="weight" class="form-control">
+    <br>
+    <br>
+        <h3>Enter your height in m : </h3> <input type="text" name="height" class="form-control">
+    <br>
+    <br>
+    <input type="submit">
+</form>
+</div>
+</div>
+
+
 {% endblock %}

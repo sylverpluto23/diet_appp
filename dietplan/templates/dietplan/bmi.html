@@ -1,7 +1,12 @@
 {% extends 'dietplan/base1.html' %}
 {% block content%}
+{% load static %}
+
 <div class="bmiform">
 <h1>BMI CHECKER:</h1>
+         <img src="{% static 'dietplan/bmi2.jpg' %}" width="500" height="500">
+    <img src="{% static 'dietplan/bmi1.jpg' %}" width="500" height="500">
+
 <div class="row justify-content-center mt-5">
 <form  action="bmi1">
 

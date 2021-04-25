@@ -170,8 +170,8 @@ def user_info(request):
         if form.is_valid():
             form.save(commit=True)
             age = form.cleaned_data['age']
-            height = form.cleaned_data['height']
-            weight = form.cleaned_data['weight']
+            height = form.cleaned_data['height_in_cm']
+            weight = form.cleaned_data['weight_in_kg']
             gender_choice = form.cleaned_data['gender_choice']
             activity_choices = form.cleaned_data['activity_choices']
             if gender_choice == 'male':
